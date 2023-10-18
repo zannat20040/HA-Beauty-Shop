@@ -3,7 +3,7 @@
     background-color: rgb(205, 232, 255);
     padding: 10px;
     text-align: center;
-    /* font-weight: 700; */
+    transition: 0.5s;
 }
 
 .inactive-link {
@@ -12,3 +12,4 @@
     text-align: center;
     /* font-weight: 700; */
 }
+
