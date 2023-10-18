@@ -1,0 +1,14 @@
+.active-link {
+    color: black;
+    background-color: rgb(205, 232, 255);
+    padding: 10px;
+    text-align: center;
+    /* font-weight: 700; */
+}
+
+.inactive-link {
+    color: black;
+    padding: 10px;
+    text-align: center;
+    /* font-weight: 700; */
+}
