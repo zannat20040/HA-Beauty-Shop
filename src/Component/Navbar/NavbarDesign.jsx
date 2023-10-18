@@ -38,7 +38,7 @@ const NavbarDesign = ({drawerList,navList}) => {
         </ul>
       </div>
       <div className="navbar-end">
-        <div className="drawer drawer-end text-end">
+        <div className="drawer drawer-end text-end z-20">
           <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
             <label

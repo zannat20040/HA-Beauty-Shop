@@ -1,6 +1,6 @@
 .active-link {
     color: black;
-    background-color: rgb(205, 232, 255);
+    border-bottom: 2px solid rgb(167, 208, 243);
     padding: 10px;
     text-align: center;
     transition: 0.5s;
