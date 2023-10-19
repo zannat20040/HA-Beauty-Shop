@@ -58,7 +58,7 @@ const Banner = () => {
           </SwiperSlide>
         </Swiper>
 
-        <div className="hero-content text-center absolute top-0 bottom-0 my-0  z-20 left-0 right-0 mx-auto text-white">
+        <div className="hero-content text-center absolute top-0 bottom-0 my-0 px-14 z-20 left-0 right-0 mx-auto text-white">
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">Hello Beauty...</h1>
             <p className="mb-5 text-base">

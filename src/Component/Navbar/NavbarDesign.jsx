@@ -30,7 +30,7 @@ const NavbarDesign = ({drawerList,navList}) => {
           </ul>
         </div>
         <img src="https://i.ibb.co/W5JpYXp/H.png" alt="" className="w-16" />
-        <a className="btn btn-ghost normal-case text-3xl">HA Beauty</a>
+        <p className="normal-case text-3xl ml-3 font-bold">HA Beauty</p>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 space-x-3 text-base">
@@ -38,7 +38,7 @@ const NavbarDesign = ({drawerList,navList}) => {
         </ul>
       </div>
       <div className="navbar-end">
-        <div className="drawer drawer-end text-end z-20">
+        <div className="drawer drawer-end text-end z-50">
           <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
             <label

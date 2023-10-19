@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Cleansing",
+    "details": "Cleansing is the first step to remove dirt and impurities from your skin. Use a gentle cleanser suitable for your skin type.",
+    "img": "https://i.ibb.co/6mvvtN5/Face-cleansers.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Exfoliation",
+    "details": "Exfoliation helps remove dead skin cells, promoting a healthy and radiant complexion. Use a mild exfoliator 2-3 times a week.",
+    "img": "https://i.ibb.co/R7ZJCcm/pexels-polina-kovaleva-6543322.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Moisturizing",
+    "details": "Apply a good moisturizer to keep your skin hydrated and maintain its natural moisture balance.",
+    "img": "https://i.ibb.co/37XQkyg/istockphoto-1289220585-170667a.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Sunscreen",
+    "details": "Don't forget to apply sunscreen with an SPF of at least 30 to protect your skin from harmful UV rays.",
+    "img": "https://i.ibb.co/HVnwZVH/istockphoto-1211404988-170667a.jpg"
+  }
+]
