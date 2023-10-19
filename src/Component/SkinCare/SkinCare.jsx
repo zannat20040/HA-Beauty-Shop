@@ -9,13 +9,13 @@ const SkinCare = () => {
   }, []);
 
   return (
-    <div className="bg-sky-200">
-      <div className="py-16  container mx-auto mt-36">
+    <div className="bg-blue-950 text-white">
+      <div className="py-16  container mx-auto mt-36 px-6">
         <div className="text-center">
-          <h1 className="text-5xl uppercase">Take Care Of your skin today</h1>
+          <h1 className="text-5xl uppercase font-semibold">Take Care Of your skin today</h1>
           <p className="text-sm uppercase tracking-[10px] mt-3">with the best</p>
         </div>
-        <div className="mt-20 grid grid-cols-4 gap-6">
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
           {allSkinCare.map((data) => (
             <div className="card  text-center" key={data.id}>
               <div className="avatar justify-center">
@@ -24,7 +24,7 @@ const SkinCare = () => {
                 </div>
               </div>
               <div className="card-body items-center">
-                <h2 className="card-title text-slate-800 text-lg uppercase">{data.title}</h2>
+                <h2 className="card-title  text-lg uppercase">{data.title}</h2>
                 <p>{data.details}</p>
               </div>
             </div>

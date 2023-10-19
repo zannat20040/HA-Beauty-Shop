@@ -1,13 +1,13 @@
 .active-link {
-    color: black;
-    border-bottom: 2px solid rgb(167, 208, 243);
+    color: rgb(23 37 84);
+    border-bottom: 2px solid rgb(23 37 84);
     padding: 10px;
     text-align: center;
     transition: 0.5s;
 }
 
 .inactive-link {
-    color: black;
+    color: rgb(23 37 84);
     padding: 10px;
     text-align: center;
     /* font-weight: 700; */

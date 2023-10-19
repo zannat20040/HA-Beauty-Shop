@@ -57,7 +57,7 @@ const Navbar = () => {
           return isActive ? "active-link" :"inactive-link";
         }}
       >
-        Name
+        NAME
       </NavLink>
       <NavLink to='img'
         style={({ isActive, isPending }) => {
@@ -69,7 +69,7 @@ const Navbar = () => {
           return isActive ? "active-link" : "inactive-link";
         }}
       >
-        Img
+        IMG
       </NavLink>
       <NavLink to='signup'
         style={({ isActive, isPending }) => {
@@ -81,7 +81,7 @@ const Navbar = () => {
           return isActive ? "active-link" : "inactive-link";
         }}
       >
-        Sign up
+        SIGN UP
       </NavLink>
       <NavLink to='signin'
         style={({ isActive, isPending }) => {
@@ -93,7 +93,7 @@ const Navbar = () => {
           return isActive ? "active-link" : "inactive-link";
         }}
       >
-        Sign in
+        SIGN IN
       </NavLink>
     </>
   );

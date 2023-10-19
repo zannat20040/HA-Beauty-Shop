@@ -24,26 +24,26 @@ const NavbarDesign = ({drawerList,navList}) => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm text-base dropdown-content translate-y-5 z-[1] p-4 space-y-2  shadow w-52"
+            className="menu menu-sm text-blue-950 dropdown-content translate-y-5 z-[1] p-4 space-y-2  shadow w-52"
           >
             {navList}
           </ul>
         </div>
         <img src="https://i.ibb.co/W5JpYXp/H.png" alt="" className="w-16" />
-        <p className="normal-case text-3xl ml-3 font-bold">HA Beauty</p>
+        <p className=" text-3xl ml-3 font-bold text-blue-950 uppercase">HA Beauty</p>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 space-x-3 text-base">
+        <ul className="menu menu-horizontal px-1 space-x-3 text-blue-950">
           {navList}
         </ul>
       </div>
       <div className="navbar-end">
         <div className="drawer drawer-end text-end z-50">
-          <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+          <input id="my-drawer-4" type="checkbox" className="drawer-toggle " />
           <div className="drawer-content">
             <label
               htmlFor="my-drawer-4"
-              className="bg-sky-200 px-8 py-3 "
+              className="bg-blue-950 text-white px-8 py-3 btn tracking-widest font-normal hover:border-blue-950 hover:border-2 hover:bg-white hover:text-blue-950 rounded-none "
             >
               Profile
             </label>
@@ -54,7 +54,7 @@ const NavbarDesign = ({drawerList,navList}) => {
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
-            <ul className="menu p-6 w-64 min-h-full bg-sky-200 text-base space-y-3">
+            <ul className="menu p-6 w-64 min-h-full bg-blue-950 text-white space-y-3">
               {drawerList}
             </ul>
           </div>

@@ -69,7 +69,7 @@ const Banner = () => {
             </p>
             <Link to='/error'>
              
-              <button className=" bg-sky-300 rounded-none border-0 btn">
+              <button className=" bg-blue-950 text-white tracking-widest rounded-none border-0 btn font-normal">
                 Know About Us
               </button>
             </Link>
