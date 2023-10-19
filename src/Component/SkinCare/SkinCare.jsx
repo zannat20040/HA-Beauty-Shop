@@ -24,7 +24,7 @@ const SkinCare = () => {
                 </div>
               </div>
               <div className="card-body items-center">
-                <h2 className="card-title text-slate-800">{data.title}</h2>
+                <h2 className="card-title text-slate-800 text-lg uppercase">{data.title}</h2>
                 <p>{data.details}</p>
               </div>
             </div>
