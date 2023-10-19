@@ -24,7 +24,7 @@ const NavbarDesign = ({drawerList,navList}) => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm text-blue-950 dropdown-content translate-y-5 z-[1] p-4 space-y-2  shadow w-52"
+            className="menu menu-sm text-white dropdown-content translate-y-5 z-30 p-4 space-y-2 bg-blue-950 shadow w-52"
           >
             {navList}
           </ul>

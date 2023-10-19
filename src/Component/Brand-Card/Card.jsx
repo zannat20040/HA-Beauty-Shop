@@ -10,7 +10,7 @@ const Card = () => {
     },[])
     return (
         <>
-        <p className=" mt-10 text-sm uppercase tracking-[10px] text-center">visit our shop</p>
+        <p className=" mt-5 text-sm uppercase tracking-[10px] text-center">visit our shop</p>
         <h1 className=' text-center mb-10 text-5xl uppercase text-blue-950 font-semibold'>Choose Your Brand</h1>
          <div className='grid grid-cols-1 md:grid-cols-3 gap-5 px-6 container mx-auto justify-between'>
          {
