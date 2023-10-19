@@ -10,6 +10,8 @@ import {
 import ErrorPage from './Page Layout/ErrorPage';
 import Root from './Page Layout/Root';
 import Home from './Page Layout/Home';
+import AddProduct from './Page Layout/AddProduct';
+import ShowProduct from './Component/ShowProduct/ShowProduct';
 
 
 const router = createBrowserRouter([
@@ -21,13 +23,19 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>
+      },
+      {
+        path:'/addproduct',
+        element:<AddProduct></AddProduct>
       }
+      // {
+      //   path:'/:brandName/products',
+      //   element:<ShowProduct></ShowProduct>,
+      //   loader:(params)=>fetch('https://brand-shop-server-hwael8aj0-zannat20040.vercel.app/:params/products')
+      // },
+
     ]
-  },
-  {
-    path: "about",
-    element: <div>About</div>,
-  },
+  }
 ]);
 
 
