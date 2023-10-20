@@ -4,7 +4,7 @@ import Card_design from './Card_design';
 const Card = () => {
     const [allBrands, setAllBrand] = useState([])
     useEffect(()=>{
-        fetch('https://brand-shop-server-m1ktwmg9y-zannat20040.vercel.app/')
+        fetch('http://localhost:5000/')
         .then(res=>res.json())
         .then(data=>setAllBrand(data))
     },[])

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Card_design = ({ brand }) => {
   // console.log(brand)
   const { brandName, image } = brand;
+  // console.log(brandName)
 
   return (
     <div className=" bg-base-100 shadow-xl image-full rounded-none relative">

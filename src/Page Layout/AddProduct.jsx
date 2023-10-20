@@ -1,5 +1,5 @@
 import React from "react";
-import AddProductForm from "../Component/Add-Product/AddProductForm";
+import AddProductForm from "../Component/AddProductForm";
 import swal from 'sweetalert';
 
 const AddProduct = () => {
@@ -24,7 +24,9 @@ const AddProduct = () => {
       description,
     };
 
-    fetch("https://brand-shop-server-m1ktwmg9y-zannat20040.vercel.app/products", {
+    console.log(newProduct)
+
+    fetch("http://localhost:5000/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

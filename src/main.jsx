@@ -13,6 +13,7 @@ import Home from "./Page Layout/Home";
 import AddProduct from "./Page Layout/AddProduct";
 import ShowProduct from "./Component/ShowProduct/ShowProduct";
 import Details from "./Page Layout/Details";
+import Cart from "./Page Layout/Cart";
 
 const router = createBrowserRouter([
   {
@@ -33,13 +34,14 @@ const router = createBrowserRouter([
         element: <ShowProduct></ShowProduct>,
         loader: (params) =>
           fetch(
-            "https://brand-shop-server-m1ktwmg9y-zannat20040.vercel.app/products"
+            "http://localhost:5000/products"
           ),
       },
       {
         path: "/:productName/details",
         element: <Details></Details>,
-      },
+        loader:(params)=>fetch("http://localhost:5000/products")
+      }
     ],
   },
 ]);

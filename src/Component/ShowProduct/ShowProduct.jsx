@@ -20,7 +20,7 @@ const ShowProduct = () => {
 
   const [sliderImage, setSliderImage] = useState([]);
   useEffect(() => {
-     fetch("https://brand-shop-server-m1ktwmg9y-zannat20040.vercel.app/slider")
+     fetch("http://localhost:5000/slider")
       .then((res) => res.json())
       .then((data) => setSliderImage(data));
   }, []);
@@ -70,7 +70,7 @@ const ShowProduct = () => {
           Enhance Your Natural Beauty with our Stunning Selection
         </p>
 
-        <div className="grid grid-cols-4 gap-6 mt-28">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-28">
           {filteredata.length === 0 ? (
             <>
             <p className=" text-lg   text-center block col-span-4 font-medium text-gray-500">
