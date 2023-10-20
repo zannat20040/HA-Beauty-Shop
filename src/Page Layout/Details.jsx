@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import swal from 'sweetalert';
 

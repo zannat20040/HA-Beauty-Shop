@@ -71,7 +71,7 @@ const Navbar = () => {
       >
         IMG
       </NavLink>
-      <NavLink to='signup'
+      <NavLink to='/signup'
         style={({ isActive, isPending }) => {
           return {
             color: isActive ? "black" : "inherit",

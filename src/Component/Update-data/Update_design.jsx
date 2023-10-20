@@ -1,9 +1,12 @@
 import React from 'react';
 
-const AddProductForm = ({HandleProductAdd}) => {
+const Update_design = () => {
+    const HandleUpdate =()=>{
+        console.log('worrkkd')
+    }
     return (
-        <form onSubmit={HandleProductAdd}>
-        <div className="space-y-3 mt-20 md:w-9/12 w-full mx-auto">
+        <form onSubmit={HandleUpdate}>
+        <div className="space-y-3 mt-20">
           <div  className=" grid grid-cols-2 gap-4">
             <input required
               type="text" name='productName'
@@ -73,4 +76,4 @@ const AddProductForm = ({HandleProductAdd}) => {
     );
 };
 
-export default AddProductForm;
+export default Update_design;

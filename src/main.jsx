@@ -14,6 +14,9 @@ import AddProduct from "./Page Layout/AddProduct";
 import ShowProduct from "./Component/ShowProduct/ShowProduct";
 import Details from "./Page Layout/Details";
 import Cart from "./Page Layout/Cart";
+import Update from "./Component/Update-data/Update";
+import SignUp from "./Component/Sign UP/SignUp";
+import Login from "./Component/Login/Login";
 
 const router = createBrowserRouter([
   {
@@ -32,20 +35,26 @@ const router = createBrowserRouter([
       {
         path: "/:brandName/products",
         element: <ShowProduct></ShowProduct>,
-        loader: (params) =>
-          fetch(
-            "http://localhost:5000/products"
-          ),
+        loader: (params) => fetch("http://localhost:5000/products"),
       },
       {
         path: "/:productName/details",
         element: <Details></Details>,
-        loader:(params)=>fetch("http://localhost:5000/products")
+        loader: (params) => fetch("http://localhost:5000/products"),
       },
       {
-        path:'mycart',
-        element:<Cart></Cart>,
-        loader:(params)=>fetch("http://localhost:5000/cart")
+        path: "/mycart",
+        element: <Cart></Cart>,
+        loader: (params) => fetch("http://localhost:5000/cart"),
+      },
+      {
+        path: "/update",
+        element: <Update></Update>,
+        loader: (params) => fetch("http://localhost:5000/products"),
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
       }
     ],
   },
