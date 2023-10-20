@@ -63,7 +63,7 @@ const Login = () => {
       .catch((error) => {
         const errorMessage = error.message;
         swal("Sorry!", errorMessage, "error");
-        setLogin(false);
+        // setLogin(false);
       });
   };
   return (

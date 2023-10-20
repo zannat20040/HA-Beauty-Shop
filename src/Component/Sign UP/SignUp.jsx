@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import SignupForm from "./SignupForm";
-import auth from "../../../Firebase/Firebase.config";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import {   getAuth, updateProfile } from "firebase/auth";
 import swal from "sweetalert";
 import app from "../../../Firebase/Firebase.config";
 import { AuthContext } from "../Auth-Component/AuthProvider";
@@ -35,13 +34,20 @@ const SignUp = () => {
       return;
     }
    
+    const auth = getAuth(app);
     createUser(email, password)
       .then((userCredential) => {
         // Signed up
         const user = userCredential.user;
         e.target.reset();
-        user.displayName = name;
-        user.photoURL = image;
+        updateProfile(auth.currentUser, {
+          displayName: name , photoURL: image
+        }).then((user) => {
+          console.log(user)
+        }).catch((error) => {
+          console.log(error)
+        })
+        
         swal("Great!", "You have created an account successfully!", "success");
         navigate(location?.state ? location.state : "/");
 
