@@ -3,9 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Auth-Component/AuthProvider";
 import swal from "sweetalert";
 
-const NavbarDesign = ({ drawerList, navList }) => {
+const NavbarDesign = ({  navList }) => {
   const { user, signOutUser } = useContext(AuthContext);
-  console.log(user);
 
   const HandleSignOut = () => {
     signOutUser()
@@ -13,7 +12,6 @@ const NavbarDesign = ({ drawerList, navList }) => {
         swal("Ops!", "You have logged out successfully!", "success");
       })
       .catch((error) => {
-        console.log(error);
         swal("Ops!", error, "error");
       });
   };
@@ -83,8 +81,8 @@ const NavbarDesign = ({ drawerList, navList }) => {
               <ul className="menu p-6 w-64 min-h-full bg-blue-950 text-white space-y-3">
                 {user ? (
                   <>
-                    <img src={user.photoURL} alt="" />
-                    <h1 className="bg-blue-800 text-white font-medium tracking-widest  w-full rounded-none text-2xl uppercase text-center py-2 ">
+                    <img src={user.photoURL}  alt="" />
+                    <h1 className="bg-blue-800 text-white font-medium tracking-widest  w-full rounded-none  uppercase text-center py-2 ">
                       {user.displayName}
                     </h1>
                     <Link to="/" onClick={HandleSignOut}>

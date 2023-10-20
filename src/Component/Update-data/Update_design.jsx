@@ -2,7 +2,6 @@ import React from 'react';
 
 const Update_design = () => {
     const HandleUpdate =()=>{
-        console.log('worrkkd')
     }
     return (
         <form onSubmit={HandleUpdate}>

@@ -24,7 +24,6 @@ const AddProduct = () => {
       description,
     };
 
-    console.log(newProduct)
 
     fetch("http://localhost:5000/products", {
       method: "POST",

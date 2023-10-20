@@ -49,7 +49,7 @@ const AddProductForm = ({HandleProductAdd}) => {
           <div className=" grid grid-cols-2 gap-4">
             <input name='rating' required
               type="number"
-              placeholder="Rating"
+              placeholder="Rating out of 5"
               className="input input-bordered w-full rounded-none border-blue-950"
             />
   

@@ -1,15 +1,14 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import swal from 'sweetalert';
+import Rating from "../Component/ShowProduct/Rating";
 
 const Details = () => {
   const { productName } = useParams();
   const productDetails = useLoaderData();
-  //   console.log(productDetails)
   const findDetails = productDetails.find(
     (data) => data.productName === productName
   );
 
-  //   const [cartProduct, setCartProduct] = useState([])
   const HandleAddToCart = () => {
     fetch("http://localhost:5000/cart", {
       method: "POST",
@@ -50,9 +49,10 @@ return(res.json())
             Band Name: {findDetails.brandName}
           </p>
           <p className="text-blue-950 text-base">Type: {findDetails.type}</p>
-          <p className="text-blue-950 text-base">Price: {findDetails.price}</p>
+          <p className="text-blue-950 text-base">Price: ${findDetails.price}</p>
           <p className="text-blue-950 text-base">
-            Rating: {findDetails.rating} out of 5.00
+            {/* Rating: {findDetails.rating} out of 5.00 */}
+            <Rating rating={findDetails.rating} ></Rating>
           </p>
           <div className="card-actions">
             <button

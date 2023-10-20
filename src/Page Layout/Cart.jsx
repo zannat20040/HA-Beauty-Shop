@@ -7,7 +7,6 @@ const Cart = () => {
   const cart = useLoaderData();
   const [afterDelete, setAfterDelete] = useState(cart);
   const Handledelete = (id) => {
-    console.log("Deleting item with id:", id);;
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -23,7 +22,6 @@ const Cart = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Removed!", "Your product has been deleted from the cart.", "success");
               const remaining = afterDelete.filter(item=>item._id !== id)
@@ -36,7 +34,7 @@ const Cart = () => {
 
   return (
     <div>
-      <div className="container mx-auto px-6 grid gap-6 py-28 grid-cols-4">
+      <div className="container mx-auto px-6 grid gap-6 py-28 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {afterDelete.map((data) => (
           <CartDesign data={data} Handledelete={Handledelete}></CartDesign>
         ))}

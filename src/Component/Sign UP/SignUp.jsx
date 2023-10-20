@@ -23,7 +23,6 @@ const SignUp = () => {
     const name = e.target.name.value;
     const image = e.target.image.value;
 
-    // console.log(email, password, name, image);
 
     if (password.length < 6) {
       swal("Password length should be more than 6 character.");
@@ -41,7 +40,6 @@ const SignUp = () => {
         // Signed up
         const user = userCredential.user;
         e.target.reset();
-        console.log(user);
         user.displayName = name;
         user.photoURL = image;
         swal("Great!", "You have created an account successfully!", "success");
@@ -49,7 +47,6 @@ const SignUp = () => {
 
       })
       .catch((error) => {
-        console.log(error);
         const errormsg = error.message;
         swal("Ops, Sorry!", errormsg, "error");
       });

@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Rating from "./Rating";
 
 const ShowProductDesign = ({ data }) => {
   const { type, rating, productName, price, image, brandName, _id } = data;
-console.log(_id)
   return (
     <div className="card bg-base-100 shadow rounded-none">
       <figure className="px-10 pt-10">
@@ -16,9 +16,10 @@ console.log(_id)
         <p className="text-gray-500 tracking-widest font-semibold">
           {brandName} / {type}{" "}
         </p>
-        <h2 className="text-2xl text-blue-950 ">{price}</h2>
-        <span className="text-blue-950 tracking-widest">
-          ({rating} out of 5.00)
+        <h2 className="text-2xl text-blue-950 ">$ {price}</h2>
+        <span className="text-blue-950 tracking-widest l">
+          {/* ({rating} out of 5.00) */}
+          <Rating rating={rating}></Rating>
         </span>
         <div className="card-actions w-full">
           <Link to={`/${productName}/details`} className="w-full">
@@ -27,7 +28,7 @@ console.log(_id)
             </button>
           </Link>
 
-          <Link to={`/products/${_id}`} className="w-full">
+          <Link to={`/update/${_id}`} className="w-full">
             <button className=" btn py-3 bg-blue-950 hover:text-blue-950 hover:bg-white hover:border-2 hover:border-blue-950 text-white font-normal tracking-widest border-0 px-8  w-full rounded-none">
               update
             </button>

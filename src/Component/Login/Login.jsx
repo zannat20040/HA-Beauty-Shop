@@ -28,13 +28,11 @@ const Login = () => {
         // Signed in
         
         const user = userCredential.user;
-        console.log(user);
         swal("Welcome!", "You have logged in successfully!", "success");
         navigate(location?.state ?location.state : '/')
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log(errorMessage);
         swal("Sorry!", errorMessage, "error");
       });
   };
@@ -46,15 +44,12 @@ const Login = () => {
     createUserByGoogle()
       .then((result) => {
         const user = result.user;
-        console.log(user)
         swal("Welcome!", "You have logged in successfully!", "success");
         navigate(location?.state ?location.state : '/')
 
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log(errorMessage)
-        swal("Sorry!", errorMessage, "error");
       });
 
       googleSignOut()
