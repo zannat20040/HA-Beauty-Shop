@@ -56,7 +56,7 @@ const router = createBrowserRouter([
       // },
       {
         path: 'update/:id',
-        element: <Update></Update>,
+        element: <PrivateRoute><Update></Update></PrivateRoute>,
         loader: ({ params }) => fetch(`https://brand-shop-server-two.vercel.app/${params.id}`)
       },
       {
