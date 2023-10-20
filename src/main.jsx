@@ -27,12 +27,12 @@ const router = createBrowserRouter([
       {
         path:'/addproduct',
         element:<AddProduct></AddProduct>
-      }
-      // {
-      //   path:'/:brandName/products',
-      //   element:<ShowProduct></ShowProduct>,
-      //   loader:(params)=>fetch('https://brand-shop-server-hwael8aj0-zannat20040.vercel.app/:params/products')
-      // },
+      },
+      {
+        path:'/:brandName/products',
+        element:<ShowProduct></ShowProduct>,
+        loader:(params)=>fetch('https://brand-shop-server-7un65oqym-zannat20040.vercel.app/products')
+      },
 
     ]
   }
