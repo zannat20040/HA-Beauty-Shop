@@ -17,6 +17,8 @@ import Cart from "./Page Layout/Cart";
 import Update from "./Component/Update-data/Update";
 import SignUp from "./Component/Sign UP/SignUp";
 import Login from "./Component/Login/Login";
+import AuthProvider from "./Component/Auth-Component/AuthProvider";
+import PrivateRoute from "./Page Layout/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addproduct",
-        element: <AddProduct></AddProduct>,
+        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
       },
       {
         path: "/:brandName/products",
@@ -39,18 +41,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/:productName/details",
-        element: <Details></Details>,
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
         loader: (params) => fetch("http://localhost:5000/products"),
       },
       {
         path: "/mycart",
-        element: <Cart></Cart>,
+        element: <PrivateRoute><Cart></Cart></PrivateRoute>,
         loader: (params) => fetch("http://localhost:5000/cart"),
       },
       {
-        path: "/update",
+        path: "/products/:id",
         element: <Update></Update>,
-        loader: (params) => fetch("http://localhost:5000/products"),
+        loader: (params) => fetch(`http://localhost:5000/products/${params._id}`),
       },
       {
         path: "/signup",
@@ -66,6 +68,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );
