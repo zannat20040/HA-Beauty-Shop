@@ -1,56 +1,61 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
+
 import swal from "sweetalert";
 
+
 const Update = () => {
-    const data = useLoaderData();
-    const { type, rating, productName, price, image, brandName, description, _id} = data;
 
-    const handleUpdate = event => {
-        event.preventDefault();
+  const product = useLoaderData();
+  // console.log(product)
 
-        const form = event.target;
+  const { _id, type, rating, productName, price, image, brandName, description  } = product;
+  console.log(product)
+  const handleProduct = event => {
+      event.preventDefault();
 
-        const type = form.type.value;
-        const rating = form.rating.value;
-        const productName = form.productName.value;
-        const price = form.price.value;
-        const image = form.image.value;
-        const brandName = form.brandName.value;
-        const description = form.description.value;
+      const form = event.target;
 
-        const updatedProduct = { type, rating, productName, price, image, brandName,description }
+      const type = form.type.value;
+      const rating = form.rating.value;
+      const productName = form.productName.value;
+      const price = form.price.value;
+      const image = form.image.value;
+      const brandName = form.brandName.value;
+      const description = form.description.value;
 
-        // console.log(updatedProduct);
+      const updatedProduct = { type,rating,productName,price,image,brandName,description }
 
-        // send data to the server
-        fetch(`https://brand-shop-server-two.vercel.app/products/${_id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(updatedProduct)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
-                  swal("Updated successfuully");
+      // console.log(updatedProduct)
 
-                }
-            })
+      // send data to the server
+      fetch(`https://brand-shop-server-two.vercel.app/products/${_id}`, {
+          method: 'PUT',
+          headers: {
+              'content-type': 'application/json'
+          },
+          body: JSON.stringify(updatedProduct)
+      })
+          .then(res => res.json())
+          .then(data => {
+              console.log(data);
+              if (data.modifiedCount > 0) {
+                swal("Great", "You have updated this product successfully!", "success");
+
+              }
+          })
     }
 
   return (
     <div className="container mx-auto px-6 pb-24">
       <h1 className="mt-16 text-center  text-5xl uppercase text-blue-950 font-semibold">
-        LauUpdatench Your product
+        Update your product
       </h1>
       <p className=" text-sm uppercase tracking-[10px] text-center">
-        Customize Your product
+        Customize as your self
       </p>
-      <form onSubmit={handleUpdate}>
-        <div className="space-y-3 mt-20">
+      <form onSubmit={handleProduct}>
+        <div className="space-y-3 mt-20 md:w-9/12 w-full mx-auto">
           <div className=" grid grid-cols-2 gap-4">
             <input
               required

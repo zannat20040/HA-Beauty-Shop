@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Auth-Component/AuthProvider";
 import swal from "sweetalert";
 
-const NavbarDesign = ({  navList }) => {
-  const { user, signOutUser } = useContext(AuthContext);
-
+const NavbarDesign = ({ navList, user, loading, signOutUser }) => {
   const HandleSignOut = () => {
     signOutUser()
       .then(() => {
@@ -15,6 +13,22 @@ const NavbarDesign = ({  navList }) => {
         swal("Ops!", error, "error");
       });
   };
+
+  const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
+  const toggleTheme = (e) => {
+    if (e.target.checked) {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  
+  };
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme)
+    const localTheme = localStorage.getItem('theme')
+    document.querySelector('html')?.setAttribute('data-theme', localTheme)
+  }, [theme]);
 
   return (
     <div className="shadow">
@@ -58,7 +72,8 @@ const NavbarDesign = ({  navList }) => {
           </ul>
         </div>
         <div className="navbar-end">
-          <div className="drawer drawer-end text-end z-50">
+          <div className="drawer drawer-end text-end z-50 justify-end flex-col flex md:flex-row md:items-center gap-2">
+            <input type="checkbox" onClick={toggleTheme} className="toggle" />
             <input
               id="my-drawer-4"
               type="checkbox"
@@ -81,7 +96,7 @@ const NavbarDesign = ({  navList }) => {
               <ul className="menu p-6 w-64 min-h-full bg-blue-950 text-white space-y-3">
                 {user ? (
                   <>
-                    <img src={user.photoURL}  alt="" />
+                    <img src={user.photoURL} alt="" />
                     <h1 className="bg-blue-800 text-white font-medium tracking-widest  w-full rounded-none  uppercase text-center py-2 ">
                       {user.displayName}
                     </h1>

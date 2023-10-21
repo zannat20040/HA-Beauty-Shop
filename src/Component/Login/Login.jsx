@@ -19,14 +19,11 @@ const Login = () => {
 
   const HandleLogin = (e) => {
     e.preventDefault();
-    const auth = getAuth(app);
     const email = e.target.email.value;
     const password = e.target.password.value;
 
     loginUser(email, password)
       .then((userCredential) => {
-        // Signed in
-        
         const user = userCredential.user;
         swal("Welcome!", "You have logged in successfully!", "success");
         navigate(location?.state ?location.state : '/')
@@ -39,8 +36,7 @@ const Login = () => {
 
   const GoogleSignInHandler = (e) => {
     e.preventDefault()
-    // const provider = new GoogleAuthProvider();
-    // const auth = getAuth(app);
+
     createUserByGoogle()
       .then((result) => {
         const user = result.user;
@@ -57,13 +53,10 @@ const Login = () => {
         e.target.reset();
         swal("Ops!",'You have logged out successfully' , "success");
         navigate("/");
-        setLogin(true);
   
       })
       .catch((error) => {
         const errorMessage = error.message;
-        swal("Sorry!", errorMessage, "error");
-        setLogin(false);
       });
   };
   return (

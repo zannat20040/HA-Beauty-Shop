@@ -37,27 +37,22 @@ const router = createBrowserRouter([
       {
         path: "/:brandName/products",
         element: <ShowProduct></ShowProduct>,
-        loader: (params) => fetch("https://brand-shop-server-two.vercel.app/products"),
+        loader: () => fetch("https://brand-shop-server-two.vercel.app/products"),
       },
       {
         path: "/:productName/details",
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: (params) => fetch("/products"),
+        loader: () => fetch("https://brand-shop-server-two.vercel.app/products"),
       },
       {
         path: "/mycart",
         element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-        loader: (params) => fetch("https://brand-shop-server-two.vercel.app/cart"),
+        loader: () => fetch("https://brand-shop-server-two.vercel.app/cart"),
       },
-      // {
-      //   path: "/update/:productName",
-      //   element: <Update></Update>,
-      //   loader: (params) => fetch(`https://brand-shop-server-two.vercel.app/products/`),
-      // },
       {
-        path: 'update/:id',
-        element: <PrivateRoute><Update></Update></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://brand-shop-server-two.vercel.app/${params.id}`)
+        path: "/update/:id",
+        element:<PrivateRoute><Update></Update></PrivateRoute>,
+        loader: ({params}) => fetch(`https://brand-shop-server-two.vercel.app/products/${params.id}`),
       },
       {
         path: "/signup",

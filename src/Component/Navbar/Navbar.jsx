@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import "../../Custom.css"
+import "../../Custom.css";
 import NvabarDesign from "./NavbarDesign";
 import NavbarDesign from "./NavbarDesign";
+import { AuthContext } from "../Auth-Component/AuthProvider";
 
 const Navbar = () => {
-
+  const { user, loading, signOutUser } = useContext(AuthContext);
 
   const navList = (
     <>
-      <NavLink to='/'
+      <NavLink
+        to="/"
         style={({ isActive, isPending }) => {
           return {
             color: isActive ? "black" : "inherit",
@@ -21,7 +23,8 @@ const Navbar = () => {
       >
         Home
       </NavLink>
-      <NavLink to='addproduct'
+      <NavLink
+        to="addproduct"
         style={({ isActive, isPending }) => {
           return {
             color: isActive ? "black" : "inherit",
@@ -33,7 +36,8 @@ const Navbar = () => {
       >
         Add Product
       </NavLink>
-      <NavLink to='mycart'
+      <NavLink
+        to="mycart"
         style={({ isActive, isPending }) => {
           return {
             color: isActive ? "black" : "inherit",
@@ -47,12 +51,15 @@ const Navbar = () => {
       </NavLink>
     </>
   );
-  const drawerList = (
-    <>
-      
-    </>
+
+  return (
+    <NavbarDesign
+      navList={navList}
+      user={user}
+      loading={loading}
+      signOutUser={signOutUser}
+    ></NavbarDesign>
   );
-  return <NavbarDesign drawerList={drawerList} navList={navList}></NavbarDesign>
 };
 
 export default Navbar;

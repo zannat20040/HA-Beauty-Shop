@@ -1,10 +1,16 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import swal from 'sweetalert';
 import Rating from "../Component/ShowProduct/Rating";
+import { AuthContext } from "../Component/Auth-Component/AuthProvider";
+import { useContext } from "react";
 
 const Details = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user)
+
   const { productName } = useParams();
   const productDetails = useLoaderData();
+  // console.log(productDetails)
   const findDetails = productDetails.find(
     (data) => data.productName === productName
   );
