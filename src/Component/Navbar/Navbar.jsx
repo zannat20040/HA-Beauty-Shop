@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../../Custom.css";
 import NvabarDesign from "./NavbarDesign";
 import NavbarDesign from "./NavbarDesign";
 import { AuthContext } from "../Auth-Component/AuthProvider";
+import Cart from "../../Page Layout/Cart";
 
 const Navbar = () => {
   const { user, loading, signOutUser } = useContext(AuthContext);

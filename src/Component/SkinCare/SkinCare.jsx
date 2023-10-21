@@ -12,8 +12,12 @@ const SkinCare = () => {
     <div className="bg-blue-950 text-white">
       <div className="py-16  container mx-auto mt-36 px-6">
         <div className="text-center">
-          <h1 className="text-5xl uppercase font-semibold">Take Care Of your skin today</h1>
-          <p className="text-sm uppercase tracking-[10px] mt-3">with the best</p>
+          <h1 className="text-5xl uppercase font-semibold">
+            Take Care Of your skin today
+          </h1>
+          <p className="text-sm uppercase tracking-[10px] mt-3">
+            with the best
+          </p>
         </div>
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
           {allSkinCare.map((data) => (

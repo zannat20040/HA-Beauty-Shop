@@ -7,7 +7,7 @@ const NavbarDesign = ({ navList, user, loading, signOutUser }) => {
   const HandleSignOut = () => {
     signOutUser()
       .then(() => {
-        swal("Ops!", "You have logged out successfully!", "success");
+        swal("Ops!", "You have logged from here out successfully!", "success");
       })
       .catch((error) => {
         swal("Ops!", error, "error");
@@ -21,13 +21,12 @@ const NavbarDesign = ({ navList, user, loading, signOutUser }) => {
     } else {
       setTheme("dark");
     }
-  
   };
 
   useEffect(() => {
-    localStorage.setItem('theme', theme)
-    const localTheme = localStorage.getItem('theme')
-    document.querySelector('html')?.setAttribute('data-theme', localTheme)
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html")?.setAttribute("data-theme", localTheme);
   }, [theme]);
 
   return (

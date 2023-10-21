@@ -36,7 +36,7 @@ const SignUp = () => {
       .then((userCredential) => {
         // Signed up
         const user = userCredential.user;
-        console.log(user)
+        console.log(user);
         e.target.reset();
         updateProfile(user, {
           displayName: name,

@@ -12,10 +12,10 @@ import { AuthContext } from "../Auth-Component/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
-    const { loginUser,createUserByGoogle, googleSignOut } = useContext(AuthContext);
-    const navigate = useNavigate();
-    const location = useLocation()
-  
+  const { loginUser, createUserByGoogle, googleSignOut } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const HandleLogin = (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const Login = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         swal("Welcome!", "You have logged in successfully!", "success");
-        navigate(location?.state ?location.state : '/')
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -35,25 +35,22 @@ const Login = () => {
   };
 
   const GoogleSignInHandler = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     createUserByGoogle()
       .then((result) => {
         const user = result.user;
         swal("Welcome!", "You have logged in successfully!", "success");
-        navigate(location?.state ?location.state : '/')
-
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         const errorMessage = error.message;
       });
 
-      googleSignOut()
+    googleSignOut()
       .then((userCredential) => {
-        e.target.reset();
-        swal("Ops!",'You have logged out successfully' , "success");
         navigate("/");
-  
+        swal("Ops!", "You have logged out from this successfully", "success");
       })
       .catch((error) => {
         const errorMessage = error.message;

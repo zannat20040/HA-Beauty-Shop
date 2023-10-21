@@ -1,29 +1,47 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 import Rating from "../Component/ShowProduct/Rating";
 import { AuthContext } from "../Component/Auth-Component/AuthProvider";
 import { useContext } from "react";
 
 const Details = () => {
   const { user } = useContext(AuthContext);
-  console.log(user)
+  // console.log(user.email);
 
   const { productName } = useParams();
   const productDetails = useLoaderData();
+
   // console.log(productDetails)
   const findDetails = productDetails.find(
     (data) => data.productName === productName
   );
 
+  const { _id, type, rating, price, image, brandName, description } =
+    findDetails;
+
+  // const id = findDetails._id;
+
   const HandleAddToCart = () => {
+    const currentUser = user.email;
+
+    const cartForUser = {
+      currentUser,
+      type,
+      rating,
+      productName,
+      price,
+      image,
+      brandName,
+      description,
+    };
     fetch("https://brand-shop-server-two.vercel.app/cart", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(findDetails),
+      body: JSON.stringify(cartForUser),
     })
-      .then((res) =>{
+      .then((res) => {
         if (res.status === 200) {
           swal({
             title: "Success!",
@@ -37,9 +55,9 @@ const Details = () => {
             icon: "error",
           });
         }
-return(res.json())
-      } )
-      .then((data) => console.log(data))
+        return res.json();
+      })
+      .then((data) => console.log(data));
   };
 
   return (
@@ -58,7 +76,7 @@ return(res.json())
           <p className="text-blue-950 text-base">Price: ${findDetails.price}</p>
           <p className="text-blue-950 text-base">
             {/* Rating: {findDetails.rating} out of 5.00 */}
-            <Rating rating={findDetails.rating} ></Rating>
+            <Rating rating={findDetails.rating}></Rating>
           </p>
           <div className="card-actions">
             <button

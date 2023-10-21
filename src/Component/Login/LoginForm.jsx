@@ -57,10 +57,12 @@ const LoginForm = ({ HandleLogin, GoogleSignInHandler }) => {
             </Link>
           </p>
         </form>
-        <form action="" className="card-body pt-0" onSubmit={GoogleSignInHandler}>
-          <p className="text-sm uppercase text-center text-blue-950">
-            Or,
-          </p>
+        <form
+          action=""
+          className="card-body pt-0"
+          onSubmit={GoogleSignInHandler}
+        >
+          <p className="text-sm uppercase text-center text-blue-950">Or,</p>
           <div className="form-control ">
             <button className="btn py-3 bg-blue-950 hover:text-blue-950 hover:bg-white hover:border-2 hover:border-blue-950  text-white font-normal tracking-widest border-0 w-full rounded-none">
               Sign in with Google

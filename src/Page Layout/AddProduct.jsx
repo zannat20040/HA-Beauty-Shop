@@ -1,6 +1,6 @@
 import React from "react";
 import AddProductForm from "../Component/AddProductForm";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 const AddProduct = () => {
   const HandleProductAdd = (e) => {
@@ -24,7 +24,6 @@ const AddProduct = () => {
       description,
     };
 
-
     fetch("https://brand-shop-server-two.vercel.app/products", {
       method: "POST",
       headers: {
@@ -35,11 +34,11 @@ const AddProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-            swal({
-                title: "Success!",
-                text: "You have added a new product!",
-                icon: "success",
-              });
+          swal({
+            title: "Success!",
+            text: "You have added a new product!",
+            icon: "success",
+          });
         }
       });
   };

@@ -32,27 +32,48 @@ const router = createBrowserRouter([
       },
       {
         path: "/addproduct",
-        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <AddProduct></AddProduct>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/:brandName/products",
         element: <ShowProduct></ShowProduct>,
-        loader: () => fetch("https://brand-shop-server-two.vercel.app/products"),
+        loader: () =>
+          fetch("https://brand-shop-server-two.vercel.app/products"),
       },
       {
         path: "/:productName/details",
-        element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: () => fetch("https://brand-shop-server-two.vercel.app/products"),
+        element: (
+          <PrivateRoute>
+            <Details></Details>
+          </PrivateRoute>
+        ),
+        loader: () =>
+          fetch("https://brand-shop-server-two.vercel.app/products"),
       },
       {
         path: "/mycart",
-        element: <PrivateRoute><Cart></Cart></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <Cart></Cart>
+          </PrivateRoute>
+        ),
         loader: () => fetch("https://brand-shop-server-two.vercel.app/cart"),
       },
       {
         path: "/update/:id",
-        element:<PrivateRoute><Update></Update></PrivateRoute>,
-        loader: ({params}) => fetch(`https://brand-shop-server-two.vercel.app/products/${params.id}`),
+        element: (
+          <PrivateRoute>
+            <Update></Update>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://brand-shop-server-two.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/signup",
@@ -69,7 +90,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>
 );

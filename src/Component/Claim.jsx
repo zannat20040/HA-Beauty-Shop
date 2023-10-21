@@ -9,8 +9,10 @@ const Claim = () => {
             <img src="https://i.ibb.co/NSWTjxs/4652005-200.png" alt="" />
           </div>
         </div>
-        <div >
-          <h1 className="card-title justify-center text-blue-950 text-2xl tracking-widest font-normal uppercase">CRUELTY FREE</h1>
+        <div>
+          <h1 className="card-title justify-center text-blue-950 text-2xl tracking-widest font-normal uppercase">
+            CRUELTY FREE
+          </h1>
           <p className="text-gray-600 font-medium ">
             Kindness in every bottle, cruelty-free skincare for a compassionate
             beauty routine.
@@ -25,14 +27,14 @@ const Claim = () => {
             </div>
           </div>
 
-          <div >
-          <h1 className="card-title justify-center text-blue-950 text-2xl tracking-widest font-normal uppercase">
-            Vegan Certified
-          </h1>
-          <p className="text-gray-600 font-medium ">
-            Purely plant-powered, vegan-certified skincare for a natural and
-            ethical beauty.
-          </p>
+          <div>
+            <h1 className="card-title justify-center text-blue-950 text-2xl tracking-widest font-normal uppercase">
+              Vegan Certified
+            </h1>
+            <p className="text-gray-600 font-medium ">
+              Purely plant-powered, vegan-certified skincare for a natural and
+              ethical beauty.
+            </p>
           </div>
         </div>
       </div>
@@ -43,8 +45,10 @@ const Claim = () => {
           </div>
         </div>
 
-        <div >
-          <h1 className="card-title justify-center text-blue-950 text-2xl uppercase tracking-widest font-normal">100% Authentic</h1>
+        <div>
+          <h1 className="card-title justify-center text-blue-950 text-2xl uppercase tracking-widest font-normal">
+            100% Authentic
+          </h1>
           <p className="text-gray-600 font-medium ">
             Authenticity you can trust, genuine ingredients for genuine skincare
             results.
@@ -57,7 +61,7 @@ const Claim = () => {
             <img src="https://i.ibb.co/YDGNFG2/1892654.png" alt="" />
           </div>
         </div>
-        <div >
+        <div>
           <h1 className="card-title justify-center text-blue-950 text-2xl uppercase tracking-widest font-normal">
             Premium Quality
           </h1>

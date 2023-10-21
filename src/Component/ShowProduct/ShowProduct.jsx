@@ -20,14 +20,12 @@ const ShowProduct = () => {
 
   const [sliderImage, setSliderImage] = useState([]);
   useEffect(() => {
-     fetch("https://brand-shop-server-two.vercel.app/slider")
+    fetch("https://brand-shop-server-two.vercel.app/slider")
       .then((res) => res.json())
       .then((data) => setSliderImage(data));
   }, []);
 
-  const findBrand = sliderImage.find(
-    (data) => data.brandName === brandName
-  );
+  const findBrand = sliderImage.find((data) => data.brandName === brandName);
 
   return (
     <>
@@ -47,17 +45,12 @@ const ShowProduct = () => {
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
-          {
-            findBrand && findBrand.images.map(img=>(
+          {findBrand &&
+            findBrand.images.map((img) => (
               <SwiperSlide>
-            <img
-              src={img}
-              alt="" className=""
-            />
-          </SwiperSlide>
-            ))
-          }
-          
+                <img src={img} alt="" className="" />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
 
@@ -73,17 +66,15 @@ const ShowProduct = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-28">
           {filteredata.length === 0 ? (
             <>
-            <p className=" text-lg   text-center block col-span-4 font-medium text-gray-500">
-              No products available
-            </p>
-            <Link to='/addproduct' className="col-span-4 block text-center">
-            <button className="  btn py-3 bg-blue-950 hover:text-blue-950 hover:bg-white hover:border-2 hover:border-blue-950 text-white font-normal tracking-widest border-0 px-8 w-fit rounded-none">
-            Add new product
-          </button>
-            </Link>
-            
+              <p className=" text-lg   text-center block col-span-4 font-medium text-gray-500">
+                No products available
+              </p>
+              <Link to="/addproduct" className="col-span-4 block text-center">
+                <button className="  btn py-3 bg-blue-950 hover:text-blue-950 hover:bg-white hover:border-2 hover:border-blue-950 text-white font-normal tracking-widest border-0 px-8 w-fit rounded-none">
+                  Add new product
+                </button>
+              </Link>
             </>
-            
           ) : (
             filteredata.map((data) => (
               <ShowProductDesign data={data} key={data._id}></ShowProductDesign>
