@@ -1,7 +1,7 @@
 
 ## HA Beauty website
 
-https://github.com/hasibimamhridoy/phoneShop-final-m-8-ph
+https://brand-shop-3c930.web.app/
 
 
 ## Features
