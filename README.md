@@ -2,7 +2,7 @@
 ## HA Beauty website
 
 
-## Features
+## 🔗 Features
 
 - User registration and login functionality.
 - OAuth authentication with popular social platforms (Google)for quick access.
