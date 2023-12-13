@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CartDesign = ({ data, Handledelete }) => {
   return (
@@ -10,12 +11,12 @@ const CartDesign = ({ data, Handledelete }) => {
         <h2 className="card-title">{data.productName}</h2>
         <p>Price: {data.price}</p>
         <div className="card-actions">
-          <button
+          <Link
             onClick={() => Handledelete(data._id)}
             className=" btn py-3 bg-blue-950 hover:text-blue-950 hover:bg-white hover:border-2 hover:border-blue-950 text-white font-normal tracking-widest border-0 px-8  w-fit rounded-none"
           >
             Remove
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -21,6 +21,7 @@ import AuthProvider from "./Component/Auth-Component/AuthProvider";
 import PrivateRoute from "./Page Layout/PrivateRoute";
 import { Lines } from 'react-preloaders';
 
+const isHome = window.location.pathname === '/'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -93,6 +94,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
-      {/* <Lines /> */}
+     {isHome && <Lines />} 
   </React.StrictMode>
 );

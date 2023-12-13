@@ -10,7 +10,7 @@ const Update = () => {
   // console.log(product)
 
   const { _id, type, rating, productName, price, image, brandName, description  } = product;
-  console.log(product)
+  // console.log(product)
   const handleProduct = event => {
       event.preventDefault();
 
@@ -38,7 +38,7 @@ const Update = () => {
       })
           .then(res => res.json())
           .then(data => {
-              console.log(data);
+              // console.log(data);
               if (data.modifiedCount > 0) {
                 swal("Great", "You have updated this product successfully!", "success");
 
