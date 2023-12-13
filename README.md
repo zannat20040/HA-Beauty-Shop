@@ -1,10 +1,8 @@
 
 ## HA Beauty website
 
-https://brand-shop-3c930.web.app/
 
-
-## Features
+## 🔗 Features
 
 - User registration and login functionality.
 - OAuth authentication with popular social platforms (Google)for quick access.
@@ -17,3 +15,9 @@ https://brand-shop-3c930.web.app/
 - Dynamic routing for service details, making navigation seamless.
 - 404 page for handling unmatched routes.
 
+
+## 🔗 Links
+
+* Client site repo: https://github.com/zannat20040/HA-Beauty-Shop
+* Server site repo: https://github.com/zannat20040/HA-beauty-shop-server
+* Live site: https://brand-shop-3c930.web.app/
