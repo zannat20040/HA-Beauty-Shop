@@ -19,6 +19,7 @@ import SignUp from "./Component/Sign UP/SignUp";
 import Login from "./Component/Login/Login";
 import AuthProvider from "./Component/Auth-Component/AuthProvider";
 import PrivateRoute from "./Page Layout/PrivateRoute";
+import { Lines } from 'react-preloaders';
 
 const router = createBrowserRouter([
   {
@@ -92,5 +93,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
+      {/* <Lines /> */}
   </React.StrictMode>
 );

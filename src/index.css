@@ -10,3 +10,31 @@
 body {
     background: none !important;
 }
+
+[data-theme="night"] h1 {
+    color: white;
+  }
+
+[data-theme="night"] p {
+    color: white;
+  }
+
+[data-theme="night"] h2 {
+    color: white;
+  }
+[data-theme="night"] .card {
+    box-shadow: 0 25px 50px -12px rgba(83, 82, 82, 0.25);
+  }
+[data-theme="night"] svg {
+    color: white;
+  }
+[data-theme="night"] select {
+    color: white;
+  }
+[data-theme="night"] .active-link {
+  border-bottom: 2px solid white;
+  color: white!important;
+  }
+[data-theme="night"] .inactive-link {
+  color: white!important;
+  }

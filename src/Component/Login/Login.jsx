@@ -12,7 +12,7 @@ import { AuthContext } from "../Auth-Component/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { loginUser, createUserByGoogle, googleSignOut } =
+  const { loginUser, createUserByGoogle } =
     useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -26,7 +26,7 @@ const Login = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         swal("Welcome!", "You have logged in successfully!", "success");
-        navigate(location?.state ? location.state : "/");
+        navigate(location?.state?.redirectTo? location?.state?.redirectTo : '/')
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -41,21 +41,16 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         swal("Welcome!", "You have logged in successfully!", "success");
-        navigate(location?.state ? location.state : "/");
+        navigate(location?.state?.redirectTo? location?.state?.redirectTo : '/')
       })
       .catch((error) => {
         const errorMessage = error.message;
       });
 
-    googleSignOut()
-      .then((userCredential) => {
-        navigate("/");
-        swal("Ops!", "You have logged out from this successfully", "success");
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-      });
+
   };
+
+
   return (
     <div>
       <LoginForm

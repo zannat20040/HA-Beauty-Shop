@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Auth-Component/AuthProvider";
 import swal from "sweetalert";
 
-const NavbarDesign = ({ navList, user, loading, signOutUser }) => {
+const NavbarDesign = ({ navList, user,setLoading, loading, setUser, signOutUser }) => {
   const HandleSignOut = () => {
     signOutUser()
       .then(() => {
@@ -19,7 +19,7 @@ const NavbarDesign = ({ navList, user, loading, signOutUser }) => {
     if (e.target.checked) {
       setTheme("light");
     } else {
-      setTheme("dark");
+      setTheme("night");
     }
   };
 
