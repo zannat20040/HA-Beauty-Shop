@@ -34,7 +34,7 @@ const Details = () => {
       brandName,
       description,
     };
-    fetch("https://brand-shop-server-two.vercel.app/cart", {
+    fetch("https://ha-beauty-server.vercel.app/cart", {
       method: "POST",
       headers: {
         "content-type": "application/json",

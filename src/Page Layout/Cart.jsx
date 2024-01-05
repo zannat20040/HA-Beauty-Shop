@@ -25,7 +25,7 @@ const Cart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`https://brand-shop-server-two.vercel.app/cart/${id}`)
+          .delete(`https://ha-beauty-server.vercel.app/cart/${id}`)
           .then((res) => {
             console.log(res.data);
             Swal.fire(

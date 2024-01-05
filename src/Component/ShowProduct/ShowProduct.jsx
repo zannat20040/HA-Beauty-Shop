@@ -20,7 +20,7 @@ const ShowProduct = () => {
 
   const [sliderImage, setSliderImage] = useState([]);
   useEffect(() => {
-    fetch("https://brand-shop-server-two.vercel.app/slider")
+    fetch("https://ha-beauty-server.vercel.app/slider")
       .then((res) => res.json())
       .then((data) => setSliderImage(data));
   }, []);

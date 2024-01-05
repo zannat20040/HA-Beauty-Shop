@@ -24,7 +24,7 @@ const AddProduct = () => {
       description,
     };
 
-    fetch("https://brand-shop-server-two.vercel.app/products", {
+    fetch("https://ha-beauty-server.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

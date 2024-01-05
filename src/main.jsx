@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         path: "/:brandName/products",
         element: <ShowProduct></ShowProduct>,
         loader: () =>
-          fetch("https://brand-shop-server-two.vercel.app/products"),
+          fetch("https://ha-beauty-server.vercel.app/products"),
       },
       {
         path: "/:productName/details",
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () =>
-          fetch("https://brand-shop-server-two.vercel.app/products"),
+          fetch("https://ha-beauty-server.vercel.app/products"),
       },
       {
         path: "/mycart",
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
             <Cart></Cart>
           </PrivateRoute>
         ),
-        loader: () => fetch("https://brand-shop-server-two.vercel.app/cart"),
+        loader: () => fetch("https://ha-beauty-server.vercel.app/cart"),
       },
       {
         path: "/update/:id",
@@ -74,7 +74,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://brand-shop-server-two.vercel.app/products/${params.id}`
+            `https://ha-beauty-server.vercel.app/products/${params.id}`
           ),
       },
       {
