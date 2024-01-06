@@ -1,6 +1,6 @@
 import React from "react";
 
-const AddProductForm = ({ HandleProductAdd }) => {
+const AddProductForm = ({ HandleProductAdd, isRatingGreaterThenFive }) => {
   return (
     <form onSubmit={HandleProductAdd}>
       <div className="space-y-3 mt-20 md:w-9/12 w-full mx-auto">
@@ -14,7 +14,7 @@ const AddProductForm = ({ HandleProductAdd }) => {
           />
           <input
             required
-            type="Number"
+            type="text"
             name="price"
             placeholder="Price"
             className="input input-bordered w-full rounded-none border-blue-950"
@@ -56,17 +56,25 @@ const AddProductForm = ({ HandleProductAdd }) => {
             <option>Concealer</option>
             <option>Bronzer</option>
             <option>Cream</option>
+            <option>Shampoo</option>
+            <option>Conditionar</option>
           </select>
         </div>
         <div className=" grid grid-cols-2 gap-4">
-          <input
-            name="rating"
-            required
-            type="number"
-            placeholder="Rating out of 5"
-            className="input input-bordered w-full rounded-none border-blue-950"
-          />
-
+          <div>
+            <input
+              name="rating"
+              required
+              type="number"
+              placeholder="Rating out of 5"
+              className="input input-bordered w-full rounded-none border-blue-950"
+            />
+            {isRatingGreaterThenFive && (
+              <span className="font-bold mt-3 text-red-500">
+                Please give rating out of 5
+              </span>
+            )}
+          </div>
           <input
             type="text"
             name="image"

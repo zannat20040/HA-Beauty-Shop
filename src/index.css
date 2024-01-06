@@ -18,6 +18,12 @@ body {
 [data-theme="night"] p {
     color: white;
   }
+[data-theme="night"] input {
+    color: white;
+  }
+[data-theme="night"] textarea {
+    color: white;
+  }
 
 [data-theme="night"] h2 {
     color: white;

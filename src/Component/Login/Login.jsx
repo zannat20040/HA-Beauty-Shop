@@ -12,8 +12,7 @@ import { AuthContext } from "../Auth-Component/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { loginUser, createUserByGoogle } =
-    useContext(AuthContext);
+  const { loginUser, createUserByGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -26,7 +25,9 @@ const Login = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         swal("Welcome!", "You have logged in successfully!", "success");
-        navigate(location?.state?.redirectTo? location?.state?.redirectTo : '/')
+        navigate(
+          location?.state?.redirectTo ? location?.state?.redirectTo : "/"
+        );
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -41,15 +42,14 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         swal("Welcome!", "You have logged in successfully!", "success");
-        navigate(location?.state?.redirectTo? location?.state?.redirectTo : '/')
+        navigate(
+          location?.state?.redirectTo ? location?.state?.redirectTo : "/"
+        );
       })
       .catch((error) => {
         const errorMessage = error.message;
       });
-
-
   };
-
 
   return (
     <div>

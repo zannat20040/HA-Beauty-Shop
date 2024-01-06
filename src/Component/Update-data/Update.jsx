@@ -1,13 +1,14 @@
-import React from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 
 import swal from "sweetalert";
 
 
 const Update = () => {
+  const [isRatingGreaterThenFive, setIsRatingGreaterThenFive] = useState(false);
 
   const product = useLoaderData();
-  // console.log(product)
+  const navigate = useNavigate()
 
   const { _id, type, rating, productName, price, image, brandName, description  } = product;
   // console.log(product)
@@ -27,9 +28,13 @@ const Update = () => {
       const updatedProduct = { type,rating,productName,price,image,brandName,description }
 
       // console.log(updatedProduct)
+      if (rating> 5) {
+        setIsRatingGreaterThenFive(true);
+      }
+      else{
+        setIsRatingGreaterThenFive(false);
 
-      // send data to the server
-      fetch(`https://ha-beauty-server.vercel.app/products/${_id}`, {
+        fetch(`https://ha-beauty-server.vercel.app/products/${_id}`, {
           method: 'PUT',
           headers: {
               'content-type': 'application/json'
@@ -38,12 +43,15 @@ const Update = () => {
       })
           .then(res => res.json())
           .then(data => {
-              // console.log(data);
               if (data.modifiedCount > 0) {
                 swal("Great", "You have updated this product successfully!", "success");
-
               }
+              navigate(`/${brandName}/products`)
+
           })
+      }
+      // send data to the server
+     
     }
 
   return (
@@ -58,6 +66,7 @@ const Update = () => {
         <div className="space-y-3 mt-20 md:w-9/12 w-full mx-auto">
           <div className=" grid grid-cols-2 gap-4">
             <input
+            defaultValue={productName}
               required
               type="text"
               name="productName"
@@ -66,6 +75,7 @@ const Update = () => {
             />
             <input
               required
+              defaultValue={price}
               type="Number"
               name="price"
               placeholder="Price"
@@ -74,6 +84,7 @@ const Update = () => {
           </div>
           <div className=" grid grid-cols-2 gap-4">
             <select
+            defaultValue={brandName}
               name="brandName"
               required
               className="select select-bordered w-full rounded-none border-blue-950"
@@ -90,6 +101,7 @@ const Update = () => {
             </select>
 
             <select
+            defaultValue={type}
               name="type"
               required
               className="select select-bordered w-full rounded-none border-blue-950"
@@ -111,15 +123,26 @@ const Update = () => {
             </select>
           </div>
           <div className=" grid grid-cols-2 gap-4">
-            <input
+           
+
+<div>
+<input
+            defaultValue={rating}
               name="rating"
               required
               type="number"
               placeholder="Rating"
               className="input input-bordered w-full rounded-none border-blue-950"
             />
+            {isRatingGreaterThenFive && (
+              <span className="font-bold mt-3 text-red-500">
+                Please give rating out of 5
+              </span>
+            )}
+          </div>
 
             <input
+            defaultValue={image}
               type="text"
               name="image"
               required
@@ -128,6 +151,7 @@ const Update = () => {
             />
           </div>
           <textarea
+          defaultValue={description}
             name="description"
             required
             id=""

@@ -61,9 +61,9 @@ const Details = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 mt-28 className = 'text-blue-950 text-base'">
-      <div className="card grid grid-cols-1 md:grid-cols-3  gap-6 bg-base-100 justify-center items-center">
-        <figure className="">
+    <div className="container mx-auto  mt-28 ">
+      <div className="card grid grid-cols-1 px-6 md:grid-cols-3  gap-6 bg-base-100 justify-center items-center">
+        <figure className="rounded-none">
           <img src={findDetails.image} alt="Album" />
         </figure>
         <div className="card-body col-span-2 ">
