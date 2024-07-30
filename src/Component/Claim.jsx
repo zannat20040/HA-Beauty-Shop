@@ -6,7 +6,7 @@ const Claim = () => {
       <div>
         <div className="avatar justify-center">
           <div className="w-24 rounded-full">
-            <img src="https://i.ibb.co/NSWTjxs/4652005-200.png" alt="" />
+            <img src="https://i.ibb.co/NSWTjxs/4652005-200.png" alt="icon" />
           </div>
         </div>
         <div>
@@ -23,7 +23,7 @@ const Claim = () => {
         <div>
           <div className="avatar justify-center">
             <div className="w-24 rounded-full">
-              <img src="https://i.ibb.co/tbBkhBs/5627100.png" alt="" />
+              <img src="https://i.ibb.co/tbBkhBs/5627100.png"  alt="icon"  />
             </div>
           </div>
 
@@ -41,7 +41,7 @@ const Claim = () => {
       <div>
         <div className="avatar justify-center">
           <div className="w-24 rounded-full">
-            <img src="https://i.ibb.co/f1Y0w7T/5716576-200.png" alt="" />
+            <img src="https://i.ibb.co/f1Y0w7T/5716576-200.png"  alt="icon"  />
           </div>
         </div>
 
@@ -58,7 +58,7 @@ const Claim = () => {
       <div>
         <div className="avatar justify-center">
           <div className="w-24 rounded-full">
-            <img src="https://i.ibb.co/YDGNFG2/1892654.png" alt="" />
+            <img src="https://i.ibb.co/YDGNFG2/1892654.png"  alt="icon"  />
           </div>
         </div>
         <div>

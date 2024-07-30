@@ -35,26 +35,29 @@ const Banner = () => {
           <SwiperSlide>
             <img
               src="https://i.ibb.co/gwWFXdj/31247348-various-makeup-products-on-dark-background.jpg"
-              alt=""
+              alt="slide1"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src="https://i.ibb.co/BfHYsPz/36977631-various-makeup-products-on-dark-background-with-copyspace.jpg"
-              alt=""
+              alt="slide2"
             />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://i.ibb.co/9nF24Hc/cosmetics-780x470.webp" alt="" />
+            <img
+              src="https://i.ibb.co/9nF24Hc/cosmetics-780x470.webp"
+              alt="slide2"
+            />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src="https://i.ibb.co/S6fQMts/depositphotos-90577884-stock-photo-various-makeup-products-on-dark.jpg"
-              alt=""
+              alt="slide2"
             />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://i.ibb.co/4pNLmLs/ft.jpg" alt="" />
+            <img src="https://i.ibb.co/4pNLmLs/ft.jpg" alt="slide2" />
           </SwiperSlide>
         </Swiper>
 

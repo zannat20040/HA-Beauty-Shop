@@ -7,7 +7,7 @@ const Card_design = ({ brand }) => {
   return (
     <div className=" bg-base-100 shadow-xl image-full rounded-none relative">
       <figure>
-        <img src={image} alt="Shoes" className="w-full" />
+        <img src={image} alt="Shoes" className="w-full"  />
       </figure>
       <div className="w-full h-full bg-black bg-opacity-40 flex-col items-start  rounded-none absolute bottom-0 flex justify-end left-0 right-0 p-5">
         <h2 className="card-title text-white tracking-widest font-normal uppercase text-2xl">

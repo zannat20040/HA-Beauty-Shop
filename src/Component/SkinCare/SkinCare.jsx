@@ -24,7 +24,7 @@ const SkinCare = () => {
             <div className="card  text-center" key={data.id}>
               <div className="avatar justify-center">
                 <div className="w-24 rounded-full">
-                  <img src={data.img} />
+                  <img src={data.img}  alt="avatar" />
                 </div>
               </div>
               <div className="card-body items-center">

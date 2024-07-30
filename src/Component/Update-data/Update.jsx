@@ -161,6 +161,7 @@ const Update = () => {
           <button className=" btn py-3 bg-blue-950 hover:text-blue-950 hover:bg-white hover:border-2 hover:border-blue-950 text-white font-normal tracking-widest border-0 px-8  w-full rounded-none">
             Add this Product
           </button>
+          
         </div>
       </form>
     </div>

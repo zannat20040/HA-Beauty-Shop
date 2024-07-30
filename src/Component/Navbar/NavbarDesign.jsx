@@ -60,7 +60,7 @@ const NavbarDesign = ({ navList, user,setLoading, loading, setUser, signOutUser 
               {navList}
             </ul>
           </div>
-          <img src="https://i.ibb.co/W5JpYXp/H.png" alt="" className="w-16" />
+          <img src="https://i.ibb.co/W5JpYXp/H.png" alt="logo" className="w-16" />
           <p className=" text-3xl ml-3 font-bold text-blue-950 uppercase">
             HA Beauty
           </p>
@@ -95,7 +95,7 @@ const NavbarDesign = ({ navList, user,setLoading, loading, setUser, signOutUser 
               <ul className="menu p-6 w-64 min-h-full bg-blue-950 text-white space-y-3">
                 {user ? (
                   <>
-                    <img src={user.photoURL} alt="" />
+                    <img src={user.photoURL} alt="avatar" />
                     <h1 className="bg-blue-800 text-white font-medium tracking-widest  w-full rounded-none  uppercase text-center py-2 ">
                       {user.displayName}
                     </h1>

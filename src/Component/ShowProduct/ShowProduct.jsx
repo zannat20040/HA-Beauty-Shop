@@ -48,7 +48,7 @@ const ShowProduct = () => {
           {findBrand &&
             findBrand.images.map((img) => (
               <SwiperSlide>
-                <img src={img} alt="" className="" />
+                <img src={img} alt="slide1" className="" />
               </SwiperSlide>
             ))}
         </Swiper>
